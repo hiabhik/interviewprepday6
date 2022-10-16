@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Q1.Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" on the screen above button</h3>
+    <pre>
+        function addText(){
+            let h2 = document.getElementsByTagName("h2")[0];
+            h2.innerText ="MERN stack";
+          }
+    </pre>
+    <h3>Q2.Write code to get 1st H1 element from a webpage using DOM</h3>
+    <pre>
+        let h = document.getElementsByTagName("h1")[0];
+    </pre>
+ 
+    <h3>Q3.Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h3>
+      <pre>
+        < span id="hr">00 </ span>
+        < span id="min">00 </ span>
+        < span id="sec">00 </ span>
+
+        function timeshow(){
+            let time = new Date();
+            let h =time.getHours();
+            let m= time.getMinutes();
+            let s =time.getSeconds();
+    
+            document.getElementById("hr").innerHTML=h;
+            document.getElementById("min").innerHTML=m;
+            document.getElementById("sec").innerHTML=s;
+        };
+        setInterval(timeshow,1000);
+      </pre>
+
+
+
+<h3>Q4.Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h3>
+
+<h2 id="hello">Hello world</h2>
+<button onclick="changeText()">Replace Text</button>
+
+
+
+<h3>Q5.Create an HTML page having content as Hello world and a button named "Hide Text." When user will click on this button hide the "Hello World" text</h3>
+
+
+ <h1 id="hide">Hello World</h1>
+ <button onclick="hideText()">Hide text</button>
+
+
+    <script>
+        function changeText(){
+            let ele = document.getElementById("hello");
+
+            if (ele.innerText=="Hello world"){
+                ele.innerText="Welcome to Elevation academy";
+            }
+            else{
+                ele.innerText ="Hello world";
+            }
+           
+               
+        }
+        function hideText(){
+            let hidetext = document.getElementById("hide");
+            console.log(hidetext.innerText);
+            if(hidetext.innerText=="Hello World"){
+                 hidetext.innerText=" ";
+
+            }
+            else{
+                hidetext.innerText="Hello World";
+            }
+        }
+        
+          
+    </script>
+</body>
+</html>
